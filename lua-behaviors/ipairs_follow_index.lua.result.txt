@@ -1,0 +1,190 @@
+# ------------------------------------- # native #
+# test with lua5.1 and native
+A:
+1	I
+2	II
+B:
+C:
+D:
+# test with lua5.2 and native
+A:
+1	I
+2	II
+B:
+C:
+D:
+1	I
+2	II
+7	s
+# test with lua5.3 and native
+- lua5.3 not available
+# test with luajit-2.0 and native
+A:
+1	I
+2	II
+B:
+C:
+D:
+# test with luajit-2.1 and native
+- luajit-2.1 not available
+# ------------------------------------- # ipairs51 #
+# test with lua5.1 and ipairs51
+A:
+1	I
+2	II
+B:
+C:
+D:
+# test with lua5.2 and ipairs51
+A:
+1	I
+2	II
+B:
+C:
+D:
+# test with lua5.3 and ipairs51
+- lua5.3 not available
+# test with luajit-2.0 and ipairs51
+A:
+1	I
+2	II
+B:
+C:
+D:
+# test with luajit-2.1 and ipairs51
+- luajit-2.1 not available
+# ------------------------------------- # ipairs52 #
+# test with lua5.1 and ipairs52
+A:
+1	I
+2	II
+B:
+C:
+D:
+1	I
+2	II
+7	s
+# test with lua5.2 and ipairs52
+A:
+1	I
+2	II
+B:
+C:
+D:
+1	I
+2	II
+7	s
+# test with lua5.3 and ipairs52
+- lua5.3 not available
+# test with luajit-2.0 and ipairs52
+A:
+1	I
+2	II
+B:
+C:
+D:
+1	I
+2	II
+7	s
+# test with luajit-2.1 and ipairs52
+- luajit-2.1 not available
+# ------------------------------------- # ipairs53 #
+# test with lua5.1 and ipairs53
+A:
+1	I
+2	II
+B:
+1	I
+2	II
+C:
+1	I
+2	II
+3	III
+D:
+1	I
+2	II
+3	III
+# test with lua5.2 and ipairs53
+A:
+1	I
+2	II
+B:
+1	I
+2	II
+C:
+1	I
+2	II
+3	III
+D:
+1	I
+2	II
+3	III
+# test with lua5.3 and ipairs53
+- lua5.3 not available
+# test with luajit-2.0 and ipairs53
+A:
+1	I
+2	II
+B:
+1	I
+2	II
+C:
+1	I
+2	II
+3	III
+D:
+1	I
+2	II
+3	III
+# test with luajit-2.1 and ipairs53
+- luajit-2.1 not available
+# ------------------------------------- # ipairs53custom #
+# test with lua5.1 and ipairs53custom
+A:
+1	I
+2	II
+B:
+1	I
+2	II
+C:
+1	I
+2	II
+3	III
+D:
+1	I
+2	II
+3	III
+# test with lua5.2 and ipairs53custom
+A:
+1	I
+2	II
+B:
+1	I
+2	II
+C:
+1	I
+2	II
+3	III
+D:
+1	I
+2	II
+3	III
+# test with lua5.3 and ipairs53custom
+- lua5.3 not available
+# test with luajit-2.0 and ipairs53custom
+A:
+1	I
+2	II
+B:
+1	I
+2	II
+C:
+1	I
+2	II
+3	III
+D:
+1	I
+2	II
+3	III
+# test with luajit-2.1 and ipairs53custom
+- luajit-2.1 not available
