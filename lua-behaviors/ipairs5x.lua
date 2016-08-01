@@ -29,7 +29,7 @@ local function ipairs53custom(t, startvalue) -- lua5.3 does NOT use mt.__ipairs
 	end
 end
 
-local function ipairs53(t) -- lua5.1 and lua5.3 does NOT use mt.__ipairs
+local function ipairs53(t) -- lua5.3 does NOT use mt.__ipairs
 	local i = 0
 	local mt = getmetatable(t)
 	t = mt and type(mt.__index)=="table" and mt.__index or t
@@ -42,7 +42,6 @@ local function ipairs53(t) -- lua5.1 and lua5.3 does NOT use mt.__ipairs
 		end
 	end
 end
-local ipairs51 = ipairs53
 
 local function ipairs52(t) -- lua5.2 use mt.__ipairs
 	local m = getmetatable(t)
@@ -51,12 +50,26 @@ local function ipairs52(t) -- lua5.2 use mt.__ipairs
 	end
 	return (function(t, var)
 		var = var + 1
-		local value = t[var]
+		local value = rawget(t,var)
 		if value ~= nil then
 			return var, value
 		end
 		return
 	end), t, 0
+end
+
+local function ipairs51(t) -- lua5.1 does NOT use mt.__ipairs
+	local i = 0
+	--local mt = getmetatable(t)
+	--t = mt and type(mt.__index)=="table" and mt.__index or t
+	local tget = rawget --function(t,k) return t[k] end --rawget
+	return function()
+		i = i + 1
+		local v = tget(t,i)
+		if v ~= nil then
+			return i, v
+		end
+	end
 end
 
 
