@@ -15,6 +15,14 @@ local function pairs53simple(t) -- lua5.2 and lua5.3 use mt.__pairs
 	end
 	return next, t, nil
 end
+--local function pairs53simple(t) -- lua5.2 and lua5.3 use mt.__pairs
+--	return (
+--		((getmetatable(t) or {}).__pairs)
+--		or
+--		(function() return next, t, nil end)
+--	)(t)
+--end
+
 
 local pairs52simple = pairs53simple
 
@@ -61,18 +69,17 @@ local pairs52shadowest = pairs53shadowest
 local M = {}
 
 M.pairs51simple = pairs51simple
-M.pairs52simple = pairs52simple
-M.pairs53simple = pairs53simple
-
-M.native = _G.pairs
-
 M.pairs51shadow = pairs51shadow
 M.pairs51shadowest = pairs51shadowest
 
+M.pairs52simple = pairs52simple
 M.pairs52shadow = pairs52shadow
 M.pairs52shadowest = pairs52shadowest
 
+M.pairs53simple = pairs53simple
 M.pairs53shadow = pairs53shadow
 M.pairs53shadowest = pairs53shadowest
+
+M.native = _G.pairs
 
 return M
