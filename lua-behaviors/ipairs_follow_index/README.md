@@ -39,6 +39,8 @@ Status: probably OK
 
 ## my custom ipairs
 
+My custom ipairs is an ipairs53 that is able to support a mt.__index function.
+
 Status: OK
 
 ```
