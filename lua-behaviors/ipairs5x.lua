@@ -33,7 +33,7 @@ local function ipairs53(t) -- lua5.3 does NOT use mt.__ipairs
 	local i = 0
 	local mt = getmetatable(t)
 	t = mt and type(mt.__index)=="table" and mt.__index or t
-	local tget = function(t,k) return t[k] end --rawget
+	local tget = function(t,k) return t[k] end
 	return function()
 		i = i + 1
 		local v = tget(t,i)
