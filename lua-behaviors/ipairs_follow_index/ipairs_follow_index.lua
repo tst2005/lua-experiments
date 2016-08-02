@@ -19,23 +19,29 @@ _=[[
 
 local ipairs = require"ipairs5x"[ assert(arg[1]) ]
 
-a={"I","II",[7]="s"}
-b=setmetatable({[3]="III"}, {__index=a})
-c=setmetatable({[3]="III"}, {__index=function(_,k) return b[k] end})
-d=setmetatable({[3]="III"}, {
+a={"I@a","II@a",[7]="VII@a"}
+local ipairsused = {"__ipairs-used"}
+b=setmetatable({[3]="III@b"}, {__index=a})
+c=setmetatable({[3]="III@c"}, {__index=function(_,k) return b[k] end})
+d=setmetatable({[3]="III@d"}, {
 	__index=function(_,k) return b[k] end,
-	__ipairs=function(_,k) return next, a, nil end,
+	__ipairs=function(_,k) return next, ipairsused, nil end,
 })
+c2=setmetatable({}, {
+	__index=c})
 
-print("A:")
+print("- a: (simple table with hole)")
 for i,v in ipairs(a) do print(i,v) end
 
-print("B:")
+print("- b: (b ---> a)")
 for i,v in ipairs(b) do print(i,v) end
 
-print("C:")
+print("- c: (c ---> b")
 for i,v in ipairs(c) do print(i,v) end
 
-print("D:")
+print("- c2: (c2 ---> c)")
+for i,v in ipairs(c2) do print(i,v) end
+
+print("- d: (d -__index=f-> b ; d -__ipairs=f-> a)")
 for i,v in ipairs(d) do print(i,v) end
 

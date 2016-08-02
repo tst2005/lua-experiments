@@ -1,1 +1,18 @@
-../native/lua5.3.txt
+- a: (simple table with hole)
+1	I@a
+2	II@a
+- b: (b ---> a)
+1	I@a
+2	II@a
+- c: (c ---> b
+1	I@a
+2	II@a
+3	III@c
+- c2: (c2 ---> c)
+1	I@a
+2	II@a
+3	III@c
+- d: (d -__index=f-> b ; d -__ipairs=f-> a)
+1	I@a
+2	II@a
+3	III@d

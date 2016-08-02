@@ -1,9 +1,8 @@
-A:
-1	I
-2	II
-B:
-C:
-D:
-1	I
-2	II
-7	s
+- a: (simple table with hole)
+1	I@a
+2	II@a
+- b: (b ---> a)
+- c: (c ---> b
+- c2: (c2 ---> c)
+- d: (d -__index=f-> b ; d -__ipairs=f-> a)
+1	__ipairs-used
