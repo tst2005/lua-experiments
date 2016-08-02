@@ -1,15 +1,17 @@
 #!/bin/sh
 
 _=[[
+	[ -d results ] || mkdir results
 	for beha in native ipairs51 ipairs52 ipairs53 ipairs53custom; do
 		echo "# ------------------------------------- # $beha #"
 		for lua in lua5.1 lua5.2 lua5.3 luajit-2.0 luajit-2.1; do
-			echo "# test with $lua and $beha"
+			echo "# follow $beha behavior on $lua"
 			if ! command -v "$lua" >/dev/null 2>&-; then
 				echo "- $lua not available"
 				continue
 			fi
-			"$lua" "$0" "$beha"
+			[ -d results/$beha ] || mkdir results/$beha
+			"$lua" "$0" "$beha" > results/$beha/$lua.txt
 		done
 	done
 	exit

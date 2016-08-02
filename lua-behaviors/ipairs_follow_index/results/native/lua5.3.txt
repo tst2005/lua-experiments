@@ -1,0 +1,15 @@
+A:
+1	I
+2	II
+B:
+1	I
+2	II
+3	III
+C:
+1	I
+2	II
+3	III
+D:
+1	I
+2	II
+7	s
